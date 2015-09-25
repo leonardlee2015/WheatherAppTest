@@ -1,0 +1,125 @@
+//
+//  CycleView.m
+//  WheatherAppTest
+//
+//  Created by 李南 on 15/9/16.
+//  Copyright (c) 2015年 ctd.leonard. All rights reserved.
+//
+
+#import "CycleView.h"
+#import "UIView+SetRect.h"
+#import <POP/POP.h>
+
+@interface CycleView ()
+@property(nonatomic,strong) CAShapeLayer *backgroundCycle;
+@property(nonatomic,strong) CAShapeLayer *percentCycle;
+
+@property(nonatomic,assign) CGFloat originPositionX;
+@property(nonatomic,assign) CGFloat targetPositionX;
+
+@end
+@implementation CycleView
+
+#define CYCLESTYKE_PERCENT 0.75f
+
+-(void)buildView{
+    
+    self.alpha = 0.f;
+    
+    // create backgroundCycleView and percentCycleView.
+    self.backgroundCycle = [self cycleWithColor:[UIColor grayColor]];
+    [self.layer addSublayer:self.backgroundCycle];
+    
+    self.percentCycle = [self cycleWithColor:[UIColor blackColor]];
+ 
+    [self.layer addSublayer:self.percentCycle];
+}
+
+-(CAShapeLayer*)cycleWithColor:(UIColor*)color{
+    
+    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:self.bounds];
+    
+    CAShapeLayer *layer = [CAShapeLayer layer];
+    layer.path = path.CGPath;
+    layer.lineWidth = self.lineWidth? self.lineWidth : 2;
+    
+    layer.strokeColor = color.CGColor;
+    layer.fillColor = [UIColor clearColor].CGColor;
+    layer.strokeEnd = 0;
+    
+    return layer;
+}
+
+-(void)show{
+    // rotate the view .
+    POPBasicAnimation *rotateAnimaion = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerRotation];
+    rotateAnimaion.toValue = @(M_PI_4);
+    rotateAnimaion.duration = SHOW_DURATION;
+    
+    POPBasicAnimation *BGCycleStokeEndAnimaion = [POPBasicAnimation animationWithPropertyNamed:kPOPShapeLayerStrokeEnd];
+    BGCycleStokeEndAnimaion.fromValue = @(0.f);
+    BGCycleStokeEndAnimaion.toValue = @(_baseStokeEnd?_baseStokeEnd:CYCLESTYKE_PERCENT);
+    BGCycleStokeEndAnimaion.duration = SHOW_DURATION;
+    
+    POPBasicAnimation *PerCycleStokeEndAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPShapeLayerStrokeEnd];
+    PerCycleStokeEndAnimation.fromValue = @(0.f);
+    PerCycleStokeEndAnimation.toValue = @((_baseStokeEnd?_baseStokeEnd:CYCLESTYKE_PERCENT) *self.percent);
+    PerCycleStokeEndAnimation.duration = SHOW_DURATION;
+
+    
+    
+    [self.backgroundCycle pop_addAnimation:BGCycleStokeEndAnimaion forKey:@"BGcycleStokeendShowAnimaiton"];
+    [self.percentCycle pop_addAnimation:PerCycleStokeEndAnimation forKey:@"perCycleStokeendShowAnimation"];
+    [self.layer pop_addAnimation:rotateAnimaion forKey:@"viewRotationShowAnimation"];
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(CycleViewPositionShowAnimation)]) {
+        [self.delegate CycleViewPositionShowAnimation];
+    }
+    
+    
+    
+    [UIView animateWithDuration:SHOW_DURATION animations:^{
+        self.alpha = 1.0f;
+    }];
+}
+-(void)hide{
+    // rotate the view .
+    POPBasicAnimation *rotateAnimaion = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerRotation];
+    rotateAnimaion.toValue = @(0);
+    rotateAnimaion.duration = HIDE_DURATION;
+    
+    POPBasicAnimation *BGCycleStokeEndAnimaion = [POPBasicAnimation animationWithPropertyNamed:kPOPShapeLayerStrokeEnd];
+    BGCycleStokeEndAnimaion.toValue = @(0);
+    BGCycleStokeEndAnimaion.duration = HIDE_DURATION;
+    
+    POPBasicAnimation *PerCycleStokeEndAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPShapeLayerStrokeEnd];
+    PerCycleStokeEndAnimation.toValue = @(0);
+    PerCycleStokeEndAnimation.duration = HIDE_DURATION;
+
+
+    
+    
+    [self.backgroundCycle pop_addAnimation:BGCycleStokeEndAnimaion forKey:@"BGcycleStokeendHideAnimaiton"];
+    [self.percentCycle pop_addAnimation:PerCycleStokeEndAnimation forKey:@"perCycleStokeendHideAnimation"];
+    [self.layer pop_addAnimation:rotateAnimaion forKey:@"viewRotationHideAnimation"];
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(CycleViewPositionHideAnimation)]) {
+        [self.delegate CycleViewPositionHideAnimation];
+    }
+    [UIView animateWithDuration:HIDE_DURATION animations:^{
+        self.alpha = 0.0f;
+    }];
+}
+
+-(void)setPercent:(CGFloat)percent{
+    // clamp enter percent to [0, 100];
+    if (percent>=100 ) {
+        percent = 100;
+    }else if (percent < 1){
+        percent = 0;
+    }
+        
+    _percent = percent/100;
+    
+}
+@end
