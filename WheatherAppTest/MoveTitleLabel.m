@@ -36,12 +36,13 @@
         _titleLabel.text = self.title;
         
     }
-    if (self.attributedTitle) {
-        _titleLabel.attributedText = self.attributedTitle;
-    }
     if (self.font) {
         _titleLabel.font = self.font;
     }
+    if (self.attributedTitle) {
+        _titleLabel.attributedText = self.attributedTitle;
+    }
+
     [_titleLabel sizeToFit];
     
     [self addSubview:_titleLabel];

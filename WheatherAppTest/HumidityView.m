@@ -84,7 +84,7 @@
 }
 
 #pragma mark - NumberViewDelegate
--(NSAttributedString*)accessNumber:(NSUInteger)number{
+-(NSAttributedString*)accessNumber:(CGFloat)number{
     NSString *numberStr = [NSString stringWithFormat:@"%2lu",(unsigned long)number];
     NSString *totalStr = [NSString stringWithFormat:@"%@%%",numberStr];
     
@@ -93,7 +93,7 @@
     
     NSMutableAttributedString *AttributedStr = [[NSMutableAttributedString  alloc]initWithString:totalStr];
     [AttributedStr addAttributes:@{
-                                   NSFontAttributeName:[UIFont fontWithName:@"Avenir" size:40],
+                                   NSFontAttributeName:[UIFont fontWithName:@"Avenir-Light" size:40],
                                    NSForegroundColorAttributeName:[UIColor blackColor]
                                    }
                            range:numberRange];

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7EAA36C0EC453BCDC834F2EA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F499F9B8AC7E931B30289B0 /* libPods.a */; };
+		D70DBBE91BB679A900936330 /* TemperatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = D70DBBE81BB679A900936330 /* TemperatureView.m */; settings = {ASSET_TAGS = (); }; };
+		D70DBBEC1BB6965100936330 /* TemperatureViewTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D70DBBEB1BB6965100936330 /* TemperatureViewTestVC.m */; settings = {ASSET_TAGS = (); }; };
 		D70F5B411B9488CE0093AAB7 /* EntryTBC.m in Sources */ = {isa = PBXBuildFile; fileRef = D70F5B401B9488CE0093AAB7 /* EntryTBC.m */; };
 		D711D50B1B9735610041338B /* UIViewController+InputAccessoryFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = D711D50A1B9735610041338B /* UIViewController+InputAccessoryFunction.m */; };
 		D711D5101B974B950041338B /* Easing.c in Sources */ = {isa = PBXBuildFile; fileRef = D711D50C1B974B950041338B /* Easing.c */; };
@@ -53,6 +55,10 @@
 		8276EB6EA332709ACEB1A0E3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9F499F9B8AC7E931B30289B0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8653D43F2BB0C36AE755077 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D70DBBE71BB679A900936330 /* TemperatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureView.h; sourceTree = "<group>"; };
+		D70DBBE81BB679A900936330 /* TemperatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureView.m; sourceTree = "<group>"; };
+		D70DBBEA1BB6965100936330 /* TemperatureViewTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureViewTestVC.h; sourceTree = "<group>"; };
+		D70DBBEB1BB6965100936330 /* TemperatureViewTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureViewTestVC.m; sourceTree = "<group>"; };
 		D70F5B3F1B9488CE0093AAB7 /* EntryTBC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryTBC.h; sourceTree = "<group>"; };
 		D70F5B401B9488CE0093AAB7 /* EntryTBC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryTBC.m; sourceTree = "<group>"; };
 		D711D5091B9735610041338B /* UIViewController+InputAccessoryFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+InputAccessoryFunction.h"; sourceTree = "<group>"; };
@@ -257,6 +263,8 @@
 				D71A285D1BB4393800D065DF /* HumidityViewTotalTestVC.m */,
 				D71EA25E1BB59580008C5459 /* MediaTimeFunctionDisplayVC.h */,
 				D71EA25F1BB59580008C5459 /* MediaTimeFunctionDisplayVC.m */,
+				D70DBBEA1BB6965100936330 /* TemperatureViewTestVC.h */,
+				D70DBBEB1BB6965100936330 /* TemperatureViewTestVC.m */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -297,6 +305,8 @@
 				D756FE961BB04F9C009F5622 /* NumberView.m */,
 				D7198F191BB1BD9900753354 /* MoveTitleLabel.h */,
 				D7198F1A1BB1BD9900753354 /* MoveTitleLabel.m */,
+				D70DBBE71BB679A900936330 /* TemperatureView.h */,
+				D70DBBE81BB679A900936330 /* TemperatureView.m */,
 			);
 			name = WheaterView;
 			sourceTree = "<group>";
@@ -449,12 +459,14 @@
 				D729A6001B9443B300DB52EB /* ViewController.m in Sources */,
 				D711D5111B974B950041338B /* YXEasing.m in Sources */,
 				D7ABCF571BA81BEF0020AA10 /* PasswardViewController.m in Sources */,
+				D70DBBEC1BB6965100936330 /* TemperatureViewTestVC.m in Sources */,
 				D735F0F91BB5469000421797 /* NumberAnimation.m in Sources */,
 				D716B3B41BA85B4C001E2020 /* SecurityLevelView.m in Sources */,
 				D71EA2601BB59580008C5459 /* MediaTimeFunctionDisplayVC.m in Sources */,
 				D71A285E1BB4393800D065DF /* HumidityViewTotalTestVC.m in Sources */,
 				D729A5FD1B9443B300DB52EB /* AppDelegate.m in Sources */,
 				D71506801BA9677E00906B06 /* CycleView.m in Sources */,
+				D70DBBE91BB679A900936330 /* TemperatureView.m in Sources */,
 				D73AC5141BA017830037346D /* EmmiterLayerTestVC.m in Sources */,
 				D711D50B1B9735610041338B /* UIViewController+InputAccessoryFunction.m in Sources */,
 				D718BDFD1B96016600156692 /* IncrementalNumberAnimaitonVC.m in Sources */,

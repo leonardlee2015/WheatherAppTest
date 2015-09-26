@@ -29,4 +29,5 @@
 @property (nonatomic, assign) CGFloat viewSizeHeight;
 @property (nonatomic, assign) CGFloat viewCenterX;
 @property (nonatomic, assign) CGFloat viewCenterY;
+@property (nonatomic, readonly) CGPoint viewInsideCenter;
 @end

@@ -67,4 +67,8 @@
 -(void)setViewCenterY:(CGFloat)viewCenterY{
     self.center = CGPointMake(self.viewCenterX, viewCenterY);
 }
+-(CGPoint)viewInsideCenter{
+    return CGPointMake(self.viewSizeWidth/2, self.viewSizeHeight/2);
+}
+
 @end

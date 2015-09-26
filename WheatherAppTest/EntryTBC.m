@@ -14,6 +14,7 @@
 #import "HumidityViewTestVC.h"
 #import "HumidityViewTotalTestVC.h"
 #import "MediaTimeFunctionDisplayVC.h"
+#import "TemperatureViewTestVC.h"
 
 #define GROUP_TITLE @"group title"
 #define GROUP_CONTENTS @"group contents"
@@ -80,6 +81,13 @@
                                   ];
     NSArray *WeatherAppFunUnit = @[
                                    @{
+                                       CONTENT_TITLE:@"Temperature View Test ",
+                                       CONTENT_DESCRIPTION:@"an vc for Temperature view test ",
+                                       CONTENT_CLASS:[TemperatureViewTestVC class],
+                                       CONTENT_STORYBOARD_ID:@""
+                                       }
+                                   ,
+                                   @{
                                        CONTENT_TITLE:@"Humidity View Test ",
                                        CONTENT_DESCRIPTION:@"an vc for humidity view test ",
                                        CONTENT_CLASS:[HumidityViewTestVC class],
@@ -95,6 +103,7 @@
                                    
                                    
                                    ];
+    
     
     _groups = @[@{
                     GROUP_TITLE:@"Weather Application Functional Unit",
