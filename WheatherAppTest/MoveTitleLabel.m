@@ -54,8 +54,8 @@
     // 预设动画 属性
     
     _midPosition = self.center;
-    _startPositon = CGPointMake(_midPosition.x-self.offset.x,_midPosition.y-self.offset.y);
-    _endPosition = CGPointMake(_midPosition.x+self.offset.x, _midPosition.y+self.offset.y);
+    _startPositon = CGPointMake(_midPosition.x+self.startOffset.x,_midPosition.y+self.startOffset.y);
+    _endPosition = CGPointMake(_midPosition.x+self.endOffset.x, _midPosition.y+self.endOffset.y);
     
     self.alpha = 0.f;
     self.center = _startPositon;

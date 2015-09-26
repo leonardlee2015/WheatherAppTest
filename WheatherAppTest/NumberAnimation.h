@@ -30,7 +30,7 @@
  *  @abstract 委托
  *  @discussion 该数字动画引擎的委托，必须实现该委托才可实现动画效果。
  */
-@property(nonatomic,strong) id<NumberAnimationDelegate> delegate;
+@property(nonatomic,weak) id<NumberAnimationDelegate> delegate;
 /**
  *  @brief  初始值
  */

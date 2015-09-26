@@ -72,11 +72,7 @@
     [self.percentCycle pop_addAnimation:PerCycleStokeEndAnimation forKey:@"perCycleStokeendShowAnimation"];
     [self.layer pop_addAnimation:rotateAnimaion forKey:@"viewRotationShowAnimation"];
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(CycleViewPositionShowAnimation)]) {
-        [self.delegate CycleViewPositionShowAnimation];
-    }
-    
-    
+
     
     [UIView animateWithDuration:SHOW_DURATION animations:^{
         self.alpha = 1.0f;
@@ -103,9 +99,7 @@
     [self.percentCycle pop_addAnimation:PerCycleStokeEndAnimation forKey:@"perCycleStokeendHideAnimation"];
     [self.layer pop_addAnimation:rotateAnimaion forKey:@"viewRotationHideAnimation"];
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(CycleViewPositionHideAnimation)]) {
-        [self.delegate CycleViewPositionHideAnimation];
-    }
+
     [UIView animateWithDuration:HIDE_DURATION animations:^{
         self.alpha = 0.0f;
     }];

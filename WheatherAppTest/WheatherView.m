@@ -8,14 +8,20 @@
 
 #import "WheatherView.h"
 
+
 @implementation WheatherView
 -(void)buildView{
     
 }
 -(void)show{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(additionShowAnimationToView:)]) {
+        [self.delegate additionShowAnimationToView:self];
+    }
     
 }
 -(void)hide{
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(additionHideAnimationToView:)]) {
+        [self.delegate additionHideAnimationToView:self];
+    }
 }
 @end

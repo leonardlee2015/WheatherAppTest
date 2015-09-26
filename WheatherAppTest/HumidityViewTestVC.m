@@ -13,7 +13,7 @@
 #import "MoveTitleLabel.h"
 #import "UIView+SetRect.h"
 
-@interface HumidityViewTestVC ()<CycleViewDelegate>
+@interface HumidityViewTestVC ()
 @property (nonatomic ,strong) HumidityView * humidityView;
 
 @end
@@ -141,7 +141,8 @@
 -(void)addTitleLabel{
     titleLabel = [[MoveTitleLabel alloc]initWithFrame:CGRectMake(self.view.viewCenterX-150, self.view.viewCenterY+200, self.view.viewSizeWidth, 100)];
     titleLabel.title = @"dsafafafdafadfa";
-    titleLabel.offset = CGPointMake(50, 0);
+    titleLabel.startOffset = CGPointMake(-50, 0);
+    titleLabel.endOffset = CGPointMake(50, 0);
     
     [self.view addSubview:titleLabel];
     [titleLabel buildView];

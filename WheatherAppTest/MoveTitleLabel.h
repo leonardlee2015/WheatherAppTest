@@ -8,11 +8,13 @@
 
 #import "WheatherView.h"
 
+
 @interface MoveTitleLabel : WheatherView
 
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic,strong) NSAttributedString *attributedTitle;
 @property (nonatomic,strong) UIFont *font;
 
-@property (nonatomic) CGPoint offset;
+@property (nonatomic) CGPoint startOffset;
+@property (nonatomic) CGPoint endOffset;
 @end

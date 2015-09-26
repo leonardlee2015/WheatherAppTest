@@ -7,10 +7,31 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIView+SetRect.h"
 
 #define SHOW_DURATION 1.75f
 #define HIDE_DURATION 0.75f
+@protocol WheatherViewDelegate <NSObject>
+@optional
+/**
+ *  @brief  additon animation will play while perform [WheatherView show].
+ *
+ *  @param view view that the animation is added to;
+ */
+-(void)additionShowAnimationToView:(UIView*)view;
+/**
+ *  @brief  additon animation will play while perform [WheatherView hide].
+ *
+ *  @param view view that the animation is added to;
+ */
+-(void)additionHideAnimationToView:(UIView*)view;
+
+@end
 @interface WheatherView : UIView
+/**
+ *  @brief  delegate
+ */
+@property (nonatomic,weak) id<WheatherViewDelegate> delegate;
 /**
  *  @author ctd.leonard, 15-09-16 11:09:32
  *

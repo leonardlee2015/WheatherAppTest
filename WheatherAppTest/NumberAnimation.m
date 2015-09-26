@@ -18,7 +18,7 @@
 }
 
 -(void)startAnimation{
-    self.animation.duration6z = self.duration>0? self.duration:1.0f;
+    self.animation.duration = self.duration>0? self.duration:1.0f;
     self.animation.fromValue = self.fromValue;
     self.animation.toValue = self.toValue;
     self.animation.timingFunction = [CAMediaTimingFunction functionWithControlPoints:0.69 :0.11 :0.32 :0.88];

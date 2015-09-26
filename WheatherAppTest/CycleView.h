@@ -8,12 +8,7 @@
 
 #import "WheatherView.h"
 
-@protocol CycleViewDelegate <NSObject>
-@required
--(void)CycleViewPositionShowAnimation;
--(void)CycleViewPositionHideAnimation;
 
-@end
 @interface CycleView : WheatherView
 /**
  *  @author ctd.leonard, 15-09-16 17:09:53
@@ -23,5 +18,5 @@
 @property (nonatomic,assign) CGFloat  percent;
 @property (nonatomic,assign) CGFloat baseStokeEnd;
 @property (nonatomic) CGFloat lineWidth;
-@property (nonatomic,weak)   id<CycleViewDelegate>  _Nullable delegate;
+
 @end
